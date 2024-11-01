@@ -1,0 +1,50 @@
+@primary-color: #b80606;
+@secondary-color: #2c3e50;
+@text-color: #333;
+@background-color: #ecf0f1;
+@table-border-color: #bdc3c7;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: @background-color;
+    color: @text-color;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+thead {
+    background-color: @primary-color;
+    color: white;
+
+    th {
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+tbody {
+    tr {
+        &:nth-child(even) {
+            background-color: lighten(@table-border-color, 40%);
+        }
+
+        &:hover {
+            background-color: lighten(@primary-color, 35%);
+            color: white;
+        }
+
+        td {
+            padding: 12px;
+            border: 1px solid @table-border-color;
+            text-align: left;
+        }
+    }
+}
